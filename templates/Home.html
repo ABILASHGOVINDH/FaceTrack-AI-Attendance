@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>FACE RECOGNITION ATTENDANCE</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css'%}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+ </head>
+<body>
+    <img src ="{% static 'Image/1.jpg'%}" alt="Classroom" style="width:100%; display: block; margin:auto;">
+    <div class="Center">
+        <h2><b>Welcome to the FACE RECOGNITION ATTENDANCE SYSTEM</b></h2>
+        <p><b>If your profile or login already exists, please take attendance by clicking the Take Attendance Button.</b></p>
+        <p><b>If not, you can create your own login by clicking the "login" button below.</b></p>
+        <!-- Form for taking attendance -->
+        <form id="attendanceForm" method="POST"> <!-- Changed method to POST -->
+            {% csrf_token %} <!-- Include CSRF token -->
+            <table align="center" width="300" border="0" cellspacing="2" cellpadding="2" style="background-color:transparent;">
+                <tr>
+                    <th colspan="5">
+                        <h3>Take Attendance</h3>
+                        <hr>
+                    </th>
+                </tr>
+                <tr>
+                    <td colspan="5">
+                        <!-- Button to take attendance -->
+                        <center><button type="submit" id="attBtn" name="take attendance">Take Attendance</button></center>
+                    </td>
+                </tr>
+        </form>
+        <form id="loginForm" action="/login/" method="POST" onsubmit="return validateLoginForm()">
+            {% csrf_token %}        
+                <tr>
+                    <td>
+                        <center><button type="submit" name="Create Account">Create Account</button></center>
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+    </body>
+    </html>
+
+
+

@@ -1,0 +1,39 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>IMAGE RECOGNITION</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <img src="{% static 'Image/1.jpg' %}" alt="Classroom Image" style="width:100%; display: block; margin: auto;">
+    <div class="Center">
+        <h2>PROFILE MAKING SYSTEM</h2>
+        <p>Please take the image first and then save the profile.</p>
+        <form id="attendanceForm" action="/take_images/" method="GET">
+            <table>
+                <tr>
+                    <th colspan="5">
+                        <h3>TAKE IMAGE</h3>
+                        <hr>
+                    </th>
+                </tr>
+                <tr>
+                    <td colspan="5">
+                        <center><button type="submit" id="takeImageBtn" name="take_image">Take image</button></center>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <center><button type="submit" name="save_profile">Save Profile</button></center>
+                    </td>
+                </tr>
+            </table>
+        </form>
+        <P>press q to exit the webcam</P>
+    </div>   
+    </body>
+    </html>
+    

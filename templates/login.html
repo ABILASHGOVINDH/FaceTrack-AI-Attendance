@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>LOGIN</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <style>
+        input[type="text"], input[type="password"] {
+            border: 1px solid;
+            padding: 10px;
+            width: 188px;
+            font-size: 14px;
+            margin-bottom: 10px;
+            height: 10px; 
+        }
+    </style>
+</head>
+<body>
+    <img src="{% static 'Image/1.jpg' %}" alt="Classroom Image" style="width:100%; display: block; margin: auto;">
+    
+    <table class="Center" align="center" width="350" border="0" cellspacing="2" cellpadding="2" style="background-color:transparent;">
+        <tr>
+            <th colspan="2">
+                <center><h3>FACE RECOGNITION ATTENDANCE LOGIN</h3><hr></center>
+            </th>
+        </tr>
+        <form id="loginForm" action="/login/" method="POST" onsubmit="return validateLoginForm()">
+            {% csrf_token %}
+            <tr>
+                <th>Name</th>
+                <td><input type="text" id="name" name="name" required></td>
+            </tr>
+            <tr>
+                <th>Password</th>
+                <td><input type="password" id="password" name="password" required></td>
+            </tr>
+            </form>
+            <form id="attendanceForm" action="/take_images/?" method="GET">
+            <tr>
+                <td colspan="2">
+                    <center><button type="submit">SUBMIT</button></center>
+                </td>
+            </tr>
+        </form>
+    </table>
+    <script>
+       function validateLoginForm() {
+    var id = document.getElementById("enter_your_id").value;
+    var name = document.getElementById("name").value;
+    var password = document.getElementById("password").value;
+
+    if (id.trim() === "" || name.trim() === "" || password.trim() === "") {
+        alert("Please fill in all fields.");
+        return false; // Prevent form submission
+    }
+    return true; // Allow form submission
+}
+
+    </script>
+</body>
+</html>
