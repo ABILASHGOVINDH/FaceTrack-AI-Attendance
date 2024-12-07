@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>FACE RECOGNITION ATTENDANCE</title>
+    <style>
+        table {
+            border: 2px solid black;
+            width: 50%; /* Adjust the width as per your requirement */
+            height: 150px; /* Adjust the height as per your requirement */
+        }
+
+        th, td {
+            padding: 8px;
+        }
+
+        .Center {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        #videoElement {
+            display: none;
+            width: 400px;
+            height: 300px;
+            background-color: #666;
+        }
+
+        /* Styling for buttons */
+        button {
+            background-color: green; /* Green background */
+            color: white; /* White text */
+            padding: 10px 20px; /* Padding */
+            border: none; /* No border */
+            border-radius: 5px; /* Rounded corners */
+            cursor: pointer; /* Cursor on hover */
+            font-size: 16px; /* Font size */
+            transition: background-color 0.3s; /* Smooth transition */
+        }
+
+        button:hover {
+            background-color: #81f887; /* Darker green on hover */
+        }
+    </style>
+</head>
+<body>
+<div class="Center">
+    <h2>Welcome to the FACE RECOGNITION ATTENDANCE SYSTEM</h2>
+    <p>If your profile or login already exists, please take attendance by clicking the Take Attendance Button.</p>
+    <p>If not, you can create your own login by clicking the "login" button below.</p>
+    <!-- Form for taking attendance -->
+    <form id="attendanceForm" method="POST"> <!-- Changed method to POST -->
+        {% csrf_token %} <!-- Include CSRF token -->
+        <table>
+            <tr>
+                <th colspan="5">
+                    <h3>Take Attendance</h3>
+                    <hr>
+                </th>
+            </tr>
+            <tr>
+                <td colspan="5">
+                    <!-- Button to take attendance -->
+                    <center><button type="submit" id="takeAttendanceBtn" name="takeAttendance">Take Attendance</button></center>
+                </td>
+            </tr>
+        </table>
+    </form>
+    <!-- Form for logging in -->
+    <form id="loginForm" action="/login/" method="GET">
+        <table>
+            <tr>
+                <th colspan="5">
+                    <h3>Login</h3>
+                    <hr>
+                </th>
+            </tr>
+            <tr>
+                <td>
+                    <!-- Button to navigate to login -->
+                    <center><button type="submit" name="login">Login</button></center>
+                </td>
+            </tr>
+        </table>
+        <p>Total Saved Profiles: {{ profile_count }}</p>
+    </form>
+</div>
+</body>
+</html>

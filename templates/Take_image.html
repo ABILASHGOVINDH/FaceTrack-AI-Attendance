@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Attendance System</title>
+    <style>
+        table {
+            border: 2px solid black;
+            width: 50%; /* Adjust the width as per your requirement */
+            height: 150px; /* Adjust the height as per your requirement */
+        }
+
+        th, td {
+            padding: 8px;
+        }
+
+        .Center {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        #videoElement {
+            display: none;
+            width: 400px;
+            height: 300px;
+            background-color: #666;
+        }
+    </style>
+</head>
+<body>
+<div class="Center">
+    <h2>PROFILE MAKING SYSTEM</h2>
+    <p>Please take the image first and then save the profile.</p>
+    <form id="attendanceForm" action="/take_images/" method="GET">
+        <table>
+            <tr>
+                <th colspan="5">
+                    <h3>TAKE IMAGE</h3>
+                    <hr>
+                </th>
+            </tr>
+            <tr>
+                <td colspan="5">
+                    <center><button type="submit" id="takeImageBtn" name="take_image">Take image</button></center>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <center><button type="submit" name="save_profile">Save Profile</button></center>
+                </td>
+            </tr>
+        </table>
+    </form>
+    <P>press q to exit the webcam</P>
+</div>   
+</body>
+</html>
