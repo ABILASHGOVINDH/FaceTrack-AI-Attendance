@@ -1,4 +1,4 @@
-FaceTrack-AI-Attendance 🎓
+#FaceTrack-AI-Attendance 🎓
 
 
 FaceTrack-AI-Attendance is an AI-powered attendance management system designed to streamline attendance tracking using face recognition technology. Built on Jupyter Notebook, this project leverages advanced machine learning algorithms to identify individuals and log attendance in real time with high accuracy.
